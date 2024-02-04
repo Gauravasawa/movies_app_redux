@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const homeSlice = createSlice({
     name: "home",
@@ -7,15 +7,16 @@ export const homeSlice = createSlice({
         genres: {},
     },
     reducers: {
-        getApiConfiguration:(state,action)=>{
-            state.url = action.payload
+        getApiConfiguration: (state, action) => {
+            state.url = action.payload;
         },
-        getApiGenres:(state,action)=>{
-            state.url = action.payload
+        getGenres: (state, action) => {
+            state.genres = action.payload;
         },
     },
 });
 
-export const {getApiConfiguration,getApiGenres} = homeSlice.actions;
+// Action creators are generated for each case reducer function
+export const { getApiConfiguration, getGenres } = homeSlice.actions;
 
 export default homeSlice.reducer;
